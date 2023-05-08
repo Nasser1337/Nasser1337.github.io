@@ -1,0 +1,15 @@
+.dsblogo {
+    width: 100%; /* Set the width of the container to 100% of its parent element */
+    max-width: 1700px; /* Set a maximum width for the container */
+    display: flex; /* Set the container to be a flex container */
+    justify-content: center; /* Center the child elements horizontally */
+    align-items: center; /* Center the child elements vertically */
+  }
+  
+  .case--img {
+    width: 100%; /* Set the width of the image to 100% of its container */
+    height: auto; /* Allow the height of the image to adjust proportionally to the width */
+    display: block; /* Set the image to be a block element */
+    margin: 0 auto; /* Center the image horizontally using auto margins */
+  }
+  
