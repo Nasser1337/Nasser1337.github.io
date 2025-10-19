@@ -12,4 +12,144 @@
     display: block; /* Set the image to be a block element */
     margin: 0 auto; /* Center the image horizontally using auto margins */
   }
-  
+
+  /* Make specific images 30% smaller (70% of original size) */
+  .smaller-image {
+    transform: scale(0.6);
+    transform-origin: center;
+  }
+
+  /* Ensure the image wrapper is positioned relatively for absolute positioning of circles */
+  .img-sa-wrapper {
+    position: relative;
+  }
+
+  /* OPTION 1: Simple circles at line endpoints with pulse animation */
+  .tooltip-item {
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid #0098cb;
+    position: absolute;
+    box-shadow: 0 2px 8px rgba(0, 152, 203, 0.3);
+    z-index: 10;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.6);
+      opacity: 0.5;
+    }
+  }
+
+  /* Position circles at the four corners around the portrait */
+  .tooltip-item-1 {
+    top: 3% !important;
+    left: 55% !important;
+    animation: pulse 2s ease-in-out infinite !important;
+  }
+
+  .tooltip-item-2 {
+    top: 50% !important;
+    right: 8% !important;
+    left: auto !important;
+    animation: pulse-right 2s ease-in-out infinite !important;
+  }
+
+  @keyframes pulse-right {
+    0%, 100% {
+      transform: translate(50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(50%, -50%) scale(1.6);
+      opacity: 0.5;
+    }
+  }
+
+  .tooltip-item-3 {
+    top: auto !important;
+    bottom: 0% !important;
+    left: 55% !important;
+    animation: pulse-bottom 2s ease-in-out infinite !important;
+  }
+
+  @keyframes pulse-bottom {
+    0%, 100% {
+      transform: translate(-50%, 50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, 50%) scale(1.6);
+      opacity: 0.5;
+    }
+  }
+
+  .tooltip-item-4 {
+    top: 50% !important;
+    left: 8% !important;
+    animation: pulse-left 2s ease-in-out infinite !important;
+  }
+
+  @keyframes pulse-left {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.6);
+      opacity: 0.5;
+    }
+  }
+
+  /* OPTION 2: Animated pulse circles (comment out Option 1 and uncomment this for alternative) */
+  /*
+  .tooltip-item {
+    width: 12px;
+    height: 12px;
+    background-color: #0098cb;
+    border-radius: 50%;
+    position: absolute;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .tooltip-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(0, 152, 203, 0.4);
+    animation: ripple 2s ease-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(2.5);
+      opacity: 0;
+    }
+  }
+  */
